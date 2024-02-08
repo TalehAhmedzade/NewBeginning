@@ -1,4 +1,5 @@
-﻿using NewBeginning.Entities;
+﻿using NewBeginning.Business;
+using NewBeginning.Entities;
 
 Console.WriteLine("Sa");
 string massage1 = "Life is hard, but you are strong, my brother. JUST DO IT";
@@ -17,3 +18,5 @@ string[] loans2 = new string[]
 };
 //create referance 
 Course course1 = new Course();
+CourseManager manager1 = new();
+manager1.GetAll();

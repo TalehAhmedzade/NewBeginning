@@ -16,6 +16,6 @@ internal class CourseManager
     //method
     public void GetAll()
 	{
-
+        Console.WriteLine("Listelendi");
 	}
 }
