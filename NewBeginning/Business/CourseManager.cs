@@ -1,4 +1,6 @@
-﻿using NewBeginning.Entities;
+﻿using NewBeginning.DataAcess.Abstracts;
+using NewBeginning.DataAcess.Concretes;
+using NewBeginning.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +11,17 @@ namespace NewBeginning.Business;
 
 internal class CourseManager
 {
-    Course course = new Course();
-    //constructor
-    public CourseManager()
+    //dependency Injection
+    private readonly ICourseDal _courseDal;
+    public CourseManager(ICourseDal courseDal)
     {
-        course.Id = 1;
-        course.Name = "Test";
-        course.Price = 10;
-        course.Description = "Test testing";
+        _courseDal = courseDal;
     }
-    
-    //method
-    public void GetAll()
+    public List<Course> GetAll()
 	{
+        //business rules
+        
+        return _courseDal.GetAll();
 
-        Console.WriteLine(course.Id+"/"+ course.Name );
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using NewBeginning.Business;
+using NewBeginning.DataAcess.Concretes;
 using NewBeginning.Entities;
 using System;
 
@@ -18,9 +19,13 @@ string[] loans2 = new string[]
 
 };
 //create referance 
-Course course1 = new Course();
-CourseManager manager1 = new();
-manager1.GetAll();
+
+CourseManager manager1 = new(new EFCourseDal());
+List<Course>courses = manager1.GetAll();
+for (int i = 0; i < courses.Count; i++)
+{
+	Console.WriteLine(courses[i].Name);
+}
 
 IndividualCustomer customer1 = new IndividualCustomer();
 customer1.Id = 1;
